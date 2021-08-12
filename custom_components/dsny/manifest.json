@@ -1,0 +1,12 @@
+{
+  "domain": "dsny",
+  "name": "DSNY (New York City Department of Sanitation)",
+  "documentation": "https://github.com/tjhorner/home-assistant-dsny",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/tjhorner/home-assistant-dsny/issues",
+  "version": "0.0.1",
+  "config_flow": true,
+  "codeowners": [
+    "@tjhorner"
+  ]
+}

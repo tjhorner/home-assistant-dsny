@@ -1,0 +1,29 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "title": "Set Address",
+                "description": "This will be used to determine collection schedule.\n\nExample: If your address is 123 Sesame St, House Number is 123 and Street Name is Sesame St",
+                "data": {
+                    "house_number": "House Number",
+                    "street_name": "Street Name",
+                    "borough": "Borough"
+                }
+            }
+        },
+        "error": {
+            "generic": "Couldn't retrieve collection schedule. Make sure your address is correct."
+        }
+    },
+    "options": {
+        "step": {
+            "edit_address": {
+                "data": {
+                    "house_number": "House Number",
+                    "street_name": "Street Name",
+                    "borough": "Borough"
+                }
+            }
+        }
+    }
+}
