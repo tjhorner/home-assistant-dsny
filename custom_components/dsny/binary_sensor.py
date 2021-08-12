@@ -5,6 +5,7 @@ import logging
 
 import async_timeout
 from homeassistant.components.binary_sensor import BinarySensorEntity
+from homeassistant.util.dt import now
 
 from homeassistant.helpers.update_coordinator import (
     CoordinatorEntity,
@@ -78,6 +79,11 @@ class DsnyCollectionTomorrowSensor(CoordinatorEntity, BinarySensorEntity):
 
     @property
     def is_on(self):
-        if len(self.coordinator.data) == 0:
+        # hacky way to do this but that's what the API gives us
+        tomorrow = (now() + timedelta(days=1)).strftime("%-m/%-d/%G")
+        matches = [
+            x for x in self.coordinator.data if x["ScheduleDate"].startswith(tomorrow)
+        ]
+        if len(matches) == 0:
             return False
-        return self.coordinator.data[0][self.schedule_type] == "Y"
+        return matches[0][self.schedule_type] == "Y"
