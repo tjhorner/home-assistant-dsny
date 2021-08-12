@@ -1,18 +1,9 @@
-"""
-Custom integration to integrate integration_blueprint with Home Assistant.
-
-For more details about this integration, please refer to
-https://github.com/custom-components/integration_blueprint
-"""
 import asyncio
-from datetime import timedelta
 import logging
 
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import Config, HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .api import DsnyApiClient
 
@@ -21,8 +12,6 @@ from .const import (
     PLATFORMS,
     STARTUP_MESSAGE,
 )
-
-SCAN_INTERVAL = timedelta(seconds=30)
 
 _LOGGER: logging.Logger = logging.getLogger(__package__)
 
@@ -37,9 +26,6 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry):
     if hass.data.get(DOMAIN) is None:
         hass.data.setdefault(DOMAIN, {})
         _LOGGER.info(STARTUP_MESSAGE)
-
-    # username = entry.data.get(CONF_USERNAME)
-    # password = entry.data.get(CONF_PASSWORD)
 
     session = async_get_clientsession(hass)
     client = DsnyApiClient(session)

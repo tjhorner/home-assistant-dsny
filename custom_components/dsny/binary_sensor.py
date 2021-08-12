@@ -6,12 +6,9 @@ import logging
 import async_timeout
 from homeassistant.components.binary_sensor import BinarySensorEntity
 
-from homeassistant.components.light import LightEntity
-from homeassistant.exceptions import ConfigEntryAuthFailed
 from homeassistant.helpers.update_coordinator import (
     CoordinatorEntity,
     DataUpdateCoordinator,
-    UpdateFailed,
 )
 
 from .const import CONF_BOROUGH, CONF_HOUSE_NUMBER, CONF_STREET_NAME, DOMAIN

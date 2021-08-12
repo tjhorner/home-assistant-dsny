@@ -4,8 +4,7 @@ NAME = "DSNY"
 DOMAIN = "dsny"
 DOMAIN_DATA = f"{DOMAIN}_data"
 VERSION = "0.0.1"
-ATTRIBUTION = "Data provided by http://jsonplaceholder.typicode.com/"
-ISSUE_URL = "https://github.com/custom-components/integration_blueprint/issues"
+ISSUE_URL = "https://github.com/tjhorner/home-assistant-dsny/issues"
 
 # Platforms
 BINARY_SENSOR = "binary_sensor"
@@ -16,13 +15,7 @@ PLATFORMS = [BINARY_SENSOR]
 CONF_HOUSE_NUMBER = "house_number"
 CONF_STREET_NAME = "street_name"
 CONF_BOROUGH = "borough"
-VALID_BOROUGHS = {
-    "BROOKLYN": "Brooklyn",
-    "MANHATTAN": "Manhattan",
-    "QUEENS": "Queens",
-    "BRONX": "Bronx",
-    "STATEN ISLAND": "Staten Island",
-}
+VALID_BOROUGHS = ["Brooklyn", "Manhattan", "Queens", "Bronx", "Staten Island"]
 
 STARTUP_MESSAGE = f"""
 -------------------------------------------------------------------

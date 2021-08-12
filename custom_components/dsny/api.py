@@ -4,7 +4,7 @@ import asyncio
 import socket
 import aiohttp
 import async_timeout
-from datetime import date, timedelta
+from datetime import timedelta
 from homeassistant.util.dt import now
 
 TIMEOUT = 15
