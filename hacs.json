@@ -1,6 +1,7 @@
 {
     "name": "DSNY (New York City Department of Sanitation)",
     "hacs": "1.6.0",
+    "render_readme": true,
     "domains": [
         "binary_sensor"
     ],
