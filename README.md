@@ -23,3 +23,26 @@ Setup is pretty simple!
 6. Enter your address and you're done! (Address data is never sent anywhere except DSNY's API.)
 
 ![](https://user-images.githubusercontent.com/2646487/129136562-5ffe64c4-43f5-4697-8759-8edeacbfb8e0.png)
+
+## Fancy Card
+
+![](https://user-images.githubusercontent.com/2646487/129136784-07f514d9-f7ad-49b6-90fd-5ff8a1aa47dc.png)
+
+Here's the YAML for a fancy card which shows all of tomorrow's collections:
+
+```yaml
+type: glance
+entities:
+  - entity: binary_sensor.trash_collection_tomorrow
+    name: Trash
+  - entity: binary_sensor.recycling_collection_tomorrow
+    name: Recycling
+  - entity: binary_sensor.organics_collection_tomorrow
+    name: Organics
+  - entity: binary_sensor.bulk_collection_tomorrow
+    name: Bulk
+show_name: true
+show_state: false
+state_color: true
+title: "Tomorrow's DSNY Collections"
+```
